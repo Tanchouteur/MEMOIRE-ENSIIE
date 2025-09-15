@@ -15,3 +15,4 @@ add_executable(EX17 C/TP1/EX17/rectangle.c)
 add_executable(EX18 C/TP1/EX18/gravite.c)
 add_executable(EX22 C/TP1/EX22/triangle.c
         C/TP1/EX22/triangle.c)
+add_executable(23 C/TP1/EX23/norme1.c C/TP1/norme1.h)
