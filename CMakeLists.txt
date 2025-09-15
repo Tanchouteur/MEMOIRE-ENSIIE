@@ -13,3 +13,5 @@ add_executable(EX10 C/TP1/EX10/positif.c)
 add_executable(EX12 C/TP1/EX12/tablem.c)
 add_executable(EX17 C/TP1/EX17/rectangle.c)
 add_executable(EX18 C/TP1/EX18/gravite.c)
+add_executable(EX22 C/TP1/EX22/triangle.c
+        C/TP1/EX22/triangle.c)
