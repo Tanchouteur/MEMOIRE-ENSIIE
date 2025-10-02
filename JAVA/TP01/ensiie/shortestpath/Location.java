@@ -1,18 +1,32 @@
 package ensiie.shortestpath;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Location {
     private final String _name;
     private final double _latitude, _longitude;
-    private ArrayList<Location> neighbors;
+    private final ArrayList<Location> neighbors;
+    private double distance;
+    private Location from;
 
     public Location(String name, double latitude, double longitude) {
         _name = name;
         _latitude = Main.convertToRadians(latitude);
         _longitude = Main.convertToRadians(longitude);
-        neighbors = new ArrayList<Location>();
+        neighbors = new ArrayList<>();
+        distance = Double.POSITIVE_INFINITY;
+    }
+
+    //Methode pour trouver le plus court chemin de la ville courante a la ville finale
+    void findShortestPathTo(Location city){
+        for (Location neighbor : neighbors) {
+            double newDistance = getDistanceToCity(neighbor) + neighbor.getDistance();
+            if (newDistance < distance) {
+                distance = newDistance;
+                from = neighbor;
+            }
+        }
     }
 
     double getDistanceToCity(Location city){
@@ -29,6 +43,14 @@ public class Location {
         return _longitude;
     }
 
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
     public ArrayList<Location> getNeighbors() {
         return neighbors;
     }
@@ -37,8 +59,8 @@ public class Location {
         neighbors.add(neighbor);
     }
 
-    public void setNeighbors(ArrayList<Location> neighbors) {
-        this.neighbors = neighbors;
+    public void setNeighbors(Location... neighbors) {
+        Collections.addAll(this.neighbors, neighbors);
     }
 
     @Override

@@ -21,6 +21,49 @@ public class Main {
         Location pampelune = new Location ("Pampelune", 42.812526,-1.645774500000016);
         Location bilbao = new Location ("Bilbao", 43.2630126, -2.9349852000000283);
 
+        evry . setNeighbors ( paris ) ;
+        paris . setNeighbors ( evry , lemans , orleans ) ;
+        lemans . setNeighbors ( orleans , tours , angers ) ;
+        orleans . setNeighbors ( lemans , paris , bourges , tours ) ;
+        angers . setNeighbors ( lemans , tours , poitiers ) ;
+        tours . setNeighbors ( angers , lemans , orleans , bourges , poitiers ) ;
+        bourges . setNeighbors ( limoges , tours , orleans ) ;
+        poitiers . setNeighbors ( limoges , angouleme ) ;
+        limoges . setNeighbors ( agen , angouleme , poitiers ) ;
+        angouleme . setNeighbors ( poitiers , limoges , agen , bordeaux ) ;
+        bordeaux . setNeighbors ( angouleme , agen , bayonne ) ;
+        agen . setNeighbors ( toulouse , pau , bordeaux , angouleme , limoges ) ;
+        toulouse . setNeighbors ( agen , pau ) ;
+        bayonne . setNeighbors ( bordeaux , pau , sansebestian ) ;
+        pau . setNeighbors ( pampelune , bayonne , agen , toulouse ) ;
+        sansebestian . setNeighbors ( bayonne , pampelune , bilbao ) ;
+        pampelune . setNeighbors ( bilbao , sansebestian , pau ) ;
+        bilbao . setNeighbors ( sansebestian , pampelune ) ;
+
+        LocationSet test = new LocationSet () ;
+        test . addLocation ( evry ) ;
+        test . addLocation ( paris ) ;
+        test . addLocation ( lemans ) ;
+        test . addLocation ( orleans ) ;
+        test . addLocation ( angers ) ;
+        test . addLocation ( tours ) ;
+        test . addLocation ( bourges ) ;
+        test . addLocation ( poitiers ) ;
+        test . addLocation ( limoges ) ;
+        test . addLocation ( angouleme ) ;
+        test . addLocation ( bordeaux ) ;
+        test . addLocation ( agen ) ;
+        test . addLocation ( toulouse ) ;
+        test . addLocation ( bayonne ) ;
+        test . addLocation ( pau ) ;
+        test . addLocation ( sansebestian ) ;
+        test . addLocation ( pampelune ) ;
+        test . addLocation ( bilbao ) ;
+
+        for ( Location cur = test . removeMin () ; cur != null ; cur = test . removeMin () ) {
+            System.out.println(cur);
+            System . out . println (" distance : " + cur . getDistance () ) ;
+        }
     }
 
     public static double convertToRadians(double degrees) {
