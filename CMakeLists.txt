@@ -16,4 +16,10 @@ add_executable(EX18 C/TP1/EX18/gravite.c)
 add_executable(EX22 C/TP1/EX22/triangle.c
         C/TP1/EX22/triangle.c)
 
-add_executable(23 C/TP1/EX23/norme1.c )
+add_executable(23 C/TP1/EX23/norme1.c)
+add_executable(EX1_TP2 C/TPTableaux/EX1/tableau.c)
+add_executable(EX2_TP2 C/TPTableaux/ex2/tableau-dicho.c)
+add_executable(EX3_TP2 C/TPTableaux/ex3/tableau-3.c)
+add_executable(EX4_TP2 C/TPTableaux/EX4/duplicat.c)
+add_executable(EX6_TP2 C/TPTableaux/EX6/ex6.c)
+add_executable(EX5_TP2 C/TPTableaux/EX5/printf2.c)
