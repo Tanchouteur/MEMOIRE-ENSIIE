@@ -19,8 +19,8 @@ int** pointeursType(int n, int *l)
         }
     }
 
-    realloc(paire, paire[0]*sizeof(int));
-    realloc(impaire, impaire[0]*sizeof(int));
+    realloc(paire, (paire[0]+1)*sizeof(int));
+    realloc(impaire, (impaire[0]+1)*sizeof(int));
 
     p[0] = paire;
     p[1] = impaire;
@@ -34,6 +34,7 @@ void printTabInt(int n, int *tab)
     {
         printf("tab[%d] = %d\n" ,i, tab[i]);
     }
+    printf("\n");
 }
 
 int main()
