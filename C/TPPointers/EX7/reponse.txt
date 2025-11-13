@@ -1,0 +1,5 @@
+1.
+Le free n'est pas dans la bonne fonction, il essaye donc de free la variable local d'une fonction
+
+2.
+on essaye de free une variable qui n'a pas été allouée dynamiquement avec malloc, calloc ou realloc.
